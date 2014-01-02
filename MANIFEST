@@ -1,0 +1,24 @@
+bin/adif-dumper
+Build.PL
+Changes
+lib/Ham/ADIF.pm
+lib/Ham/ADIF/ADI.pm
+lib/Ham/ADIF/ADX.pm
+MANIFEST			This list of files
+README
+t/00-compile-pl.t
+t/00-compile-pm.t
+t/00-critic.t
+t/00-distribution.t
+t/00-pod.t
+t/00-podcoverage.t
+t/10-ham-adif.t
+t/data/adx302.xsd
+t/data/example.adi
+t/data/example.adx
+t/data/example2.adi
+t/data/F4BKV-IOTA-MARATHON.adi
+'t/data/IK1ADH IOTA Marathon.adi'
+t/data/VE3LYC-iota-marathon.adi
+t/data/W4DKS-iota-marathon.adi
+tap-harness-junit.xml
