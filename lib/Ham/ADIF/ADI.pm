@@ -31,6 +31,13 @@ sub parse_file {
   my $recs        = [];
 
   while(my $line = <$io>) {
+    if($line =~ m{<EOR>}) {
+      #########
+      # JA1NLX - ADI with no header
+      #
+      $read_header = 0;
+    }
+
     if($read_header) {
       $header .= $line;
     } else {

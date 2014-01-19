@@ -8,7 +8,7 @@
 #
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 our $PKG = 'Ham::ADIF';
 use_ok($PKG);
@@ -122,4 +122,38 @@ use_ok($PKG);
                             'ituz' => '7',
                             'qso_date' => '20120101',
                            }, 'VE3LYC ClubLog QSO_DATE:8:D data type');
+}
+
+{
+  my $adif    = Ham::ADIF->new;
+  my $records = $adif->parse_file(q[t/data/JA1NLX-iota-marathon.adi]);
+  is_deeply($records->[0], {
+                            distance => '8810.08',
+                            band => '20M',
+                            call => 'K6VVA/7',
+                            cont => 'NA',
+                            cqz => '3',
+                            dxcc => '291',
+                            freq => '14.040000',
+                            iota => 'NA-065',
+                            ituz => '6',
+                            mode => 'CW',
+                            operator => 'JA1NLX',
+                            pfx => 'K7',
+                            qsl_sent => 'Y',
+                            qslmsg => 'GL in 2012',
+                            qslsdate => '20120104',
+                            qso_date => '20120101',
+                            time_on => '011911',
+                            rst_rcvd => '599',
+                            rst_sent => '599',
+                            k_index => '3',
+                            time_off => '011911',
+                            tx_pwr => '100w',
+                            sfi => '141',
+                            a_index => '10',
+                            lotw_qsl_sent => 'Y',
+                            app_logger32_qso_number => '30030',
+                           }, 'JA1NLX log without header - first record');
+  is((scalar @{$records}), 4, 'JA1NLX log without header - number of records');
 }

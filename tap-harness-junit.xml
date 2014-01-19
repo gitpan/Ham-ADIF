@@ -1,42 +1,65 @@
 <?xml version='1.0' encoding='utf-8'?>
 <testsuites>
-  <testsuite name="t_00_critic_t" errors="0" failures="0" tests="4" time="0.64640998840332">
-    <system-out>1..4
-ok 1 - Test::Perl::Critic for &quot;bin/adif-dumper&quot;
-ok 2 - Test::Perl::Critic for &quot;lib/Ham/ADIF.pm&quot;
-ok 3 - Test::Perl::Critic for &quot;lib/Ham/ADIF/ADI.pm&quot;
-ok 4 - Test::Perl::Critic for &quot;lib/Ham/ADIF/ADX.pm&quot;
+  <testsuite name="t_00_critic_t" errors="0" failures="0" tests="0" time="0.000500917434692383">
+    <system-out>1..0 # SKIP Author test.  Set $ENV{TEST_AUTHOR} to a true value to run.
 </system-out>
-    <testcase name="Test::Perl::Critic for &quot;bin/adif-dumper&quot;" classname="t_00_critic_t" time="0.150382995605469" />
-    <testcase name="Test::Perl::Critic for &quot;lib/Ham/ADIF.pm&quot;" classname="t_00_critic_t" time="0.161981821060181" />
-    <testcase name="Test::Perl::Critic for &quot;lib/Ham/ADIF/ADI.pm&quot;" classname="t_00_critic_t" time="0.174658060073853" />
-    <testcase name="Test::Perl::Critic for &quot;lib/Ham/ADIF/ADX.pm&quot;" classname="t_00_critic_t" time="0.149486064910889" />
   </testsuite>
-  <testsuite name="t_10_ham_adif_t" errors="0" failures="0" tests="4" time="0.0908560752868652">
-    <system-out>1..4
+  <testsuite name="t_00_compile_pl_t" errors="0" failures="0" tests="1" time="0.123071193695068">
+    <system-out>1..1
+bin/adif-dumper syntax OK
+ok 1 - Compile test for bin/adif-dumper
+</system-out>
+    <testcase name="Compile test for bin/adif-dumper" classname="t_00_compile_pl_t" time="0.0106618404388428" />
+  </testsuite>
+  <testsuite name="t_10_ham_adif_t" errors="0" failures="0" tests="6" time="0.139089822769165">
+    <system-out>1..6
 ok 1 - use Ham::ADIF;
 ok 2 - ADIF parsing: standard + user-defined fields processed
 ok 3 - ADI parsing: real example file from F4BKV
 ok 4 - VE3LYC ClubLog QSO_DATE:8:D data type
+ok 5 - JA1NLX log without header - first record
+ok 6 - JA1NLX log without header - number of records
 </system-out>
-    <testcase name="use Ham::ADIF;" classname="t_10_ham_adif_t" time="0.0666248798370361" />
-    <testcase name="ADIF parsing: standard + user-defined fields processed" classname="t_10_ham_adif_t" time="0.0180940628051758" />
-    <testcase name="ADI parsing: real example file from F4BKV" classname="t_10_ham_adif_t" time="0.000178098678588867" />
-    <testcase name="VE3LYC ClubLog QSO_DATE:8:D data type" classname="t_10_ham_adif_t" time="0.00163888931274414" />
+    <testcase name="use Ham::ADIF;" classname="t_10_ham_adif_t" time="0.118004083633423" />
+    <testcase name="ADIF parsing: standard + user-defined fields processed" classname="t_10_ham_adif_t" time="0.0151851177215576" />
+    <testcase name="ADI parsing: real example file from F4BKV" classname="t_10_ham_adif_t" time="0.00360798835754395" />
+    <testcase name="VE3LYC ClubLog QSO_DATE:8:D data type" classname="t_10_ham_adif_t" time="0.00173687934875488" />
+    <testcase name="JA1NLX log without header - first record" classname="t_10_ham_adif_t" time="0.000185012817382812" />
+    <testcase name="JA1NLX log without header - number of records" classname="t_10_ham_adif_t" time="0.000135898590087891" />
   </testsuite>
-  <testsuite name="t_00_pod_t" errors="0" failures="0" tests="4" time="0.00966596603393555">
+  <testsuite name="t_00_pod_t" errors="0" failures="0" tests="4" time="0.0230178833007812">
     <system-out>1..4
 ok 1 - POD test for blib/lib/Ham/ADIF.pm
 ok 2 - POD test for blib/lib/Ham/ADIF/ADI.pm
 ok 3 - POD test for blib/lib/Ham/ADIF/ADX.pm
 ok 4 - POD test for blib/script/adif-dumper (no pod)
 </system-out>
-    <testcase name="POD test for blib/lib/Ham/ADIF.pm" classname="t_00_pod_t" time="0.00878405570983887" />
-    <testcase name="POD test for blib/lib/Ham/ADIF/ADI.pm" classname="t_00_pod_t" time="0.000324010848999023" />
-    <testcase name="POD test for blib/lib/Ham/ADIF/ADX.pm" classname="t_00_pod_t" time="0.000147819519042969" />
-    <testcase name="POD test for blib/script/adif-dumper (no pod)" classname="t_00_pod_t" time="0.000138998031616211" />
+    <testcase name="POD test for blib/lib/Ham/ADIF.pm" classname="t_00_pod_t" time="0.00339198112487793" />
+    <testcase name="POD test for blib/lib/Ham/ADIF/ADI.pm" classname="t_00_pod_t" time="0.00404119491577148" />
+    <testcase name="POD test for blib/lib/Ham/ADIF/ADX.pm" classname="t_00_pod_t" time="0.0144379138946533" />
+    <testcase name="POD test for blib/script/adif-dumper (no pod)" classname="t_00_pod_t" time="0.000187873840332031" />
   </testsuite>
-  <testsuite name="t_00_distribution_t" errors="0" failures="0" tests="17" time="0.138855934143066">
+  <testsuite name="t_00_compile_pm_t" errors="0" failures="0" tests="3" time="0.211364984512329">
+    <system-out>1..3
+ok 1 - Compile test for blib/lib/Ham/ADIF.pm
+ok 2 - Compile test for blib/lib/Ham/ADIF/ADI.pm
+ok 3 - Compile test for blib/lib/Ham/ADIF/ADX.pm
+</system-out>
+    <testcase name="Compile test for blib/lib/Ham/ADIF.pm" classname="t_00_compile_pm_t" time="0.0931200981140137" />
+    <testcase name="Compile test for blib/lib/Ham/ADIF/ADI.pm" classname="t_00_compile_pm_t" time="0.0656969547271729" />
+    <testcase name="Compile test for blib/lib/Ham/ADIF/ADX.pm" classname="t_00_compile_pm_t" time="0.0517399311065674" />
+  </testsuite>
+  <testsuite name="t_00_podcoverage_t" errors="0" failures="0" tests="3" time="0.0772562026977539">
+    <system-out>1..3
+ok 1 - Pod coverage on Ham::ADIF
+ok 2 - Pod coverage on Ham::ADIF::ADI
+ok 3 - Pod coverage on Ham::ADIF::ADX
+</system-out>
+    <testcase name="Pod coverage on Ham::ADIF" classname="t_00_podcoverage_t" time="0.0704820156097412" />
+    <testcase name="Pod coverage on Ham::ADIF::ADI" classname="t_00_podcoverage_t" time="0.00296878814697266" />
+    <testcase name="Pod coverage on Ham::ADIF::ADX" classname="t_00_podcoverage_t" time="0.00215601921081543" />
+  </testsuite>
+  <testsuite name="t_00_distribution_t" errors="0" failures="0" tests="17" time="0.136746883392334">
     <system-out>1..17
 ok 1 - Checking MANIFEST integrity
 ok 2 - use Ham::ADIF;
@@ -56,49 +79,22 @@ ok 15 - Pod Coverage ok
 ok 16 - Pod Coverage ok
 ok 17 - Pod Coverage ok
 </system-out>
-    <testcase name="Checking MANIFEST integrity" classname="t_00_distribution_t" time="0.0608410835266113" />
-    <testcase name="use Ham::ADIF; (2)" classname="t_00_distribution_t" time="0.000257015228271484" />
-    <testcase name="use Ham::ADIF::ADI; (2)" classname="t_00_distribution_t" time="0.00695586204528809" />
-    <testcase name="use Ham::ADIF::ADX; (2)" classname="t_00_distribution_t" time="0.000158071517944336" />
-    <testcase name="Ham::ADIF defines a version (2)" classname="t_00_distribution_t" time="0.000142097473144531" />
-    <testcase name="Ham::ADIF::ADI defines a version (2)" classname="t_00_distribution_t" time="0.000138998031616211" />
-    <testcase name="Ham::ADIF::ADX defines a version (2)" classname="t_00_distribution_t" time="0.0359759330749512" />
-    <testcase name="POD test for blib/lib/Ham/ADIF.pm (2)" classname="t_00_distribution_t" time="0.000370979309082031" />
-    <testcase name="POD test for blib/lib/Ham/ADIF/ADI.pm (2)" classname="t_00_distribution_t" time="0.00392794609069824" />
-    <testcase name="POD test for blib/lib/Ham/ADIF/ADX.pm (2)" classname="t_00_distribution_t" time="0.00335001945495605" />
-    <testcase name="MANIFEST exists (2)" classname="t_00_distribution_t" time="0.000252008438110352" />
-    <testcase name="README exists (2)" classname="t_00_distribution_t" time="0.000681161880493164" />
-    <testcase name="Changes(.pod)? or ChangeLog(.pod)? exists (2)" classname="t_00_distribution_t" time="0.0205807685852051" />
-    <testcase name="Build.PL or Makefile.PL exists (2)" classname="t_00_distribution_t" time="0.000210046768188477" />
-    <testcase name="Pod Coverage ok (2)" classname="t_00_distribution_t" time="0.000133037567138672" />
-    <testcase name="Pod Coverage ok (3)" classname="t_00_distribution_t" time="0.00134110450744629" />
-    <testcase name="Pod Coverage ok (4)" classname="t_00_distribution_t" time="0.00126886367797852" />
-  </testsuite>
-  <testsuite name="t_00_compile_pl_t" errors="0" failures="0" tests="1" time="0.140499114990234">
-    <system-out>1..1
-bin/adif-dumper syntax OK
-ok 1 - Compile test for bin/adif-dumper
-</system-out>
-    <testcase name="Compile test for bin/adif-dumper (4)" classname="t_00_compile_pl_t" time="0.00571703910827637" />
-  </testsuite>
-  <testsuite name="t_00_compile_pm_t" errors="0" failures="0" tests="3" time="0.211350917816162">
-    <system-out>1..3
-ok 1 - Compile test for blib/lib/Ham/ADIF.pm
-ok 2 - Compile test for blib/lib/Ham/ADIF/ADI.pm
-ok 3 - Compile test for blib/lib/Ham/ADIF/ADX.pm
-</system-out>
-    <testcase name="Compile test for blib/lib/Ham/ADIF.pm (4)" classname="t_00_compile_pm_t" time="0.0908639430999756" />
-    <testcase name="Compile test for blib/lib/Ham/ADIF/ADI.pm (4)" classname="t_00_compile_pm_t" time="0.061614990234375" />
-    <testcase name="Compile test for blib/lib/Ham/ADIF/ADX.pm (4)" classname="t_00_compile_pm_t" time="0.0578329563140869" />
-  </testsuite>
-  <testsuite name="t_00_podcoverage_t" errors="0" failures="0" tests="3" time="0.0966360569000244">
-    <system-out>1..3
-ok 1 - Pod coverage on Ham::ADIF
-ok 2 - Pod coverage on Ham::ADIF::ADI
-ok 3 - Pod coverage on Ham::ADIF::ADX
-</system-out>
-    <testcase name="Pod coverage on Ham::ADIF (4)" classname="t_00_podcoverage_t" time="0.0886340141296387" />
-    <testcase name="Pod coverage on Ham::ADIF::ADI (4)" classname="t_00_podcoverage_t" time="0.00727295875549316" />
-    <testcase name="Pod coverage on Ham::ADIF::ADX (4)" classname="t_00_podcoverage_t" time="0.000319004058837891" />
+    <testcase name="Checking MANIFEST integrity" classname="t_00_distribution_t" time="0.0147759914398193" />
+    <testcase name="use Ham::ADIF; (2)" classname="t_00_distribution_t" time="0.0666558742523193" />
+    <testcase name="use Ham::ADIF::ADI; (2)" classname="t_00_distribution_t" time="0.000180959701538086" />
+    <testcase name="use Ham::ADIF::ADX; (2)" classname="t_00_distribution_t" time="0.000178098678588867" />
+    <testcase name="Ham::ADIF defines a version (2)" classname="t_00_distribution_t" time="0.000239133834838867" />
+    <testcase name="Ham::ADIF::ADI defines a version (2)" classname="t_00_distribution_t" time="0.000154972076416016" />
+    <testcase name="Ham::ADIF::ADX defines a version (2)" classname="t_00_distribution_t" time="0.022636890411377" />
+    <testcase name="POD test for blib/lib/Ham/ADIF.pm (2)" classname="t_00_distribution_t" time="0.000128030776977539" />
+    <testcase name="POD test for blib/lib/Ham/ADIF/ADI.pm (2)" classname="t_00_distribution_t" time="0.00322508811950684" />
+    <testcase name="POD test for blib/lib/Ham/ADIF/ADX.pm (2)" classname="t_00_distribution_t" time="0.00320982933044434" />
+    <testcase name="MANIFEST exists (2)" classname="t_00_distribution_t" time="0.000105142593383789" />
+    <testcase name="README exists (2)" classname="t_00_distribution_t" time="8.392333984375e-05" />
+    <testcase name="Changes(.pod)? or ChangeLog(.pod)? exists (2)" classname="t_00_distribution_t" time="0.000169038772583008" />
+    <testcase name="Build.PL or Makefile.PL exists (2)" classname="t_00_distribution_t" time="8.70227813720703e-05" />
+    <testcase name="Pod Coverage ok (2)" classname="t_00_distribution_t" time="0.0186200141906738" />
+    <testcase name="Pod Coverage ok (3)" classname="t_00_distribution_t" time="0.00191688537597656" />
+    <testcase name="Pod Coverage ok (4)" classname="t_00_distribution_t" time="0.0018460750579834" />
   </testsuite>
 </testsuites>

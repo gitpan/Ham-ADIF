@@ -59,7 +59,6 @@ my $builder = $class->new(
                                                   'Test::Perl::Critic'      => '1.01',
                                                  },
                           script_files        => [qw(bin/adif-dumper)],
-                          data_files          => _process_dir('data'),
                           use_tap_harness     => 1,
                           tap_harness_args    => {
                                                   jobs      => 10,
@@ -70,29 +69,4 @@ my $builder = $class->new(
 #                          sign                => 1,
                          );
 
-for my $extra (qw(data)) {
-  $builder->add_build_element($extra);
-  my $prefix = $builder->prefix;
-  $prefix    = $prefix ? "$prefix/" : q[/usr/];
-  $builder->install_path($extra => sprintf q[%sshare/ham-iota/%s], $prefix, $extra);
-}
-
 $builder->create_build_script();
-
-sub _process_dir {
-  my (@topdirs) = @_;
-  my $results  = {};
-
-  for my $topdir (@topdirs) {
-    open my $fh, q[-|], qq[find $topdir -type f] or croak $ERRNO;
-    while(<$fh>) {
-      chomp;
-      if($_ =~ m|^$topdir|smx) {
-        $results->{$_} = $_;
-      }
-    }
-    close $fh or croak $ERRNO;
-  }
-
-  return $results;
-}
