@@ -13,7 +13,7 @@ use Carp;
 use Ham::ADIF::ADX;
 use Ham::ADIF::ADI;
 
-our $VERSION = q[1.3];
+our $VERSION = q[1.5];
 
 sub new {
   my ($class, $ref) = @_;

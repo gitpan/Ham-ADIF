@@ -20,6 +20,8 @@ t/data/example2.adi
 t/data/F4BKV-IOTA-MARATHON.adi
 't/data/IK1ADH IOTA Marathon.adi'
 t/data/JA1NLX-iota-marathon.adi
+t/data/SV8IIR.adi
 t/data/VE3LYC-iota-marathon.adi
 t/data/W4DKS-iota-marathon.adi
-tap-harness-junit.xml
+META.yml
+META.json

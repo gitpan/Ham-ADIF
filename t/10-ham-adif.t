@@ -8,7 +8,7 @@
 #
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 our $PKG = 'Ham::ADIF';
 use_ok($PKG);
@@ -156,4 +156,29 @@ use_ok($PKG);
                             app_logger32_qso_number => '30030',
                            }, 'JA1NLX log without header - first record');
   is((scalar @{$records}), 4, 'JA1NLX log without header - number of records');
+}
+
+
+{
+  my $adif    = Ham::ADIF->new;
+  my $records = $adif->parse_file(q[t/data/SV8IIR.adi]);
+  is_deeply($records->[0], {
+                            adif_ver         => '1.00',
+                            station_callsign => 'SV8IIR',
+                            call             => 'VK8NSB',
+                            qso_date         => '20120101',
+                            time_on          => '091324',
+                            time_off         => '091827',
+                            freq             => '28.12000',
+                            mode             => 'PSK31',
+                            submode          => 'BPSK',
+                            rst_rcvd         => '599',
+                            rst_sent         => '599',
+                            name             => 'STUART',
+                            qth              => ' Australia',
+                            cnty             => ' Australia',
+                            iota             => 'OC-001',
+                            qsl_sent         => 'N',
+                            qsl_rcvd         => 'N',
+                           });
 }
